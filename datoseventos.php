@@ -1,51 +1,49 @@
 <?php
 
-header('Content-Type: application/json');
+header( 'Content-Type: application/json' );
 
-require("conexion.php");
+require( 'bd.php' );
 
 $conexion = regresarConexion();
 
-switch($_GET['accion']){
+switch( $_GET[ 'accion' ] ) {
 
     case 'listar':
-        //code...
-        $datos = mysqli_query($conexion,"select id,
-        titulo as title,
-        descripcion,
-        inicio as start,
-        fin as end,
-        colortexto as textColor,
-        colofondo as backgroundColor
-        from eventos");
-        $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
-        echo json_encode($resultado);
+    //code...
+    $datos = mysqli_query( $conexion, "select id,
+            titulo as title,
+            descripcion,
+            inicio as start,
+            fin as end,
+            colortexto as textColor,
+            colorfondo as backgroundColor,
+            imagen as img
+            from eventos" );
+    $resultado = mysqli_fetch_all( $datos, MYSQLI_ASSOC );
+    echo json_encode( $resultado );
 
-        break;
+    break;
 
-        case 'agregar':
-            /* "insert into eventos (titulo, descripcion, inicio, fin, colortexto, colorfondo) values
-            ('$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')" */
+    case 'agregar':
 
-            break;
+    $respuesta = mysqli_query( $conexion, "insert into eventos (titulo, descripcion, inicio, fin, colortexto, colorfondo) values
+            ('$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')" );
+    echo json_encode( $respuesta );
 
-            case 'modificar':
-                //code...
+    /*  */
 
-                /* "update eventos set titulo = '$_POST[titulo]',
-                                    descripcion = '$_POST[descripcion]',
-                                    inicio = '$_POST[inicio]',
-                                    fin = '$_POST[fin]',
-                                    colortexto = '$_POST[colortexto]',
-                                    colorfondo = '$_POST[colorfondo]',
-                                    where id = $_POST[id]" */
-                break;
+    break;
 
-                case 'borrar':
-                    //code...
+    case 'modificar':
+    $respuesta = mysqli_query( $conexion, "update eventos set titulo = '$_POST[titulo]',descripcion = '$_POST[descripcion]',inicio = '$_POST[inicio]',fin = '$_POST[fin]',colortexto = '$_POST[colortexto]',colorfondo = '$_POST[colorfondo]' where id = '$_POST[id]'" );
 
-                    /* "delete from eventos where id = $_POST[id]" */
-                    break;
+    echo json_encode( $respuesta );
+    break;
+
+    case 'borrar':
+    $respuesta = mysqli_query( $conexion, "delete from eventos where id = $_POST[id]" );
+    echo json_encode( $respuesta );
+    break;
 }
 
 ?>
