@@ -1,0 +1,45 @@
+<style>
+    #preloader{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 99999;
+        background: #fff;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader img{
+        animation: loading .5s ease infinite;
+    }
+
+    @keyframes loading {
+    0%{
+    transform: skewX(-5deg);
+    }
+    50%{
+    transform: skewX(0);
+    }
+    100%{
+    transform: skewX(-5deg);
+  }
+}
+</style>
+
+<div id="preloader">
+    <div class="preloader">
+        <div class="loader">
+            <img src="../imagenes/preload.webp" alt="Imagen de preloader">
+        </div>
+    </div>
+</div>
+
+<script>
+    var tiempoCierre = 3000
+    function cerrarPreloader(){
+    let preloader = document.getElementById('preloader')
+    preloader.style.display = "none"
+    }
+    setTimeout(cerrarPreloader, tiempoCierre );
+</script>

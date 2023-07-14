@@ -1,0 +1,146 @@
+<style>
+
+.hero{
+    background: #00000a90;
+}
+
+.herop1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 90vh;
+}
+
+.herop2{
+    content: '';
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+
+.firmas{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: linear-gradient(90deg, #00000080 10%,#00000a00), url(../imagenes/Fotos/entregraFirmas2.webp);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.firmas h2{
+    color: #f6f6f6;
+    font-family: 'GalanBold', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 0 7% ;
+    width: 400px;
+}
+.herop3{
+    content: '';
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    width: 100%;
+    height: 90vh;
+}
+    .btn-nav-hero{
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .btn-nav-hero i{
+        content: '';
+        background: #ffffffb2;
+        width: 20px;
+        border-radius: 50px;
+        height: 10px;
+        cursor: pointer;
+    }
+</style>
+
+<section class="hero">
+    <div class="herop1">
+    <div class="videoBanner">
+        <video src="../imagenes/pag_web.mp4" muted autoplay loop></video>
+        <span class="mantoVid"></span>
+    </div>
+    <h1 id="titleHero"><strong>Nos une</strong> las ganas de trabajar por nuestra ciudad</h1>
+    </div>
+
+    <div class="herop2">
+        <div class="firmas">
+            <h2>Entregamos <b>+319.000</b> Firmas</h2>
+        </div>
+    </div>
+    <div class="herop3">
+        <h2>Parte 3</h2>
+    </div>
+    <span class="btn-nav-hero">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+</section>
+
+<script>
+    let hero1 = document.querySelector('.herop1')
+    let hero2 = document.querySelector('.herop2')
+    let hero3 = document.querySelector('.herop3')
+    let selectBtn = document.querySelector('.btn-nav-hero').children
+    selectBtn[0].style.backgroundColor = "#fff"
+    selectBtn[0].onclick = botonh1
+    selectBtn[1].onclick = botonh2
+    selectBtn[2].onclick = botonh3
+
+    function limpiarAnimaciones(){
+        hero1.style.animation = ""
+        hero2.style.animation = ""
+        hero3.style.animation = ""
+    }
+    
+    limpiarAnimaciones()
+
+    function botonh1(){
+        limpiarAnimaciones()
+        hero1.style.display = "flex"
+        hero1.style.animation = "slideLeftNew .5s ease forwards"
+        hero2.style.display = "none"
+        hero3.style.display = "none"
+        selectBtn[0].style.backgroundColor= "#fff"
+        selectBtn[1].style.backgroundColor= "#ffffffb2"
+        selectBtn[2].style.backgroundColor= "#ffffffb2"
+    }
+
+    function botonh2(){
+        limpiarAnimaciones()
+        hero1.style.display = "none"
+        hero2.style.display = "flex"
+        hero2.style.animation = "slideLeftNew .5s ease forwards"
+        hero3.style.display = "none"
+
+        selectBtn[0].style.backgroundColor = "#ffffffb2"
+        selectBtn[1].style.backgroundColor = "#fff"
+        selectBtn[2].style.backgroundColor = "#ffffffb2"
+    }
+
+    function botonh3(){
+        limpiarAnimaciones()
+        hero1.style.display = "none"
+        hero2.style.display = "none"
+        hero3.style.display = "flex"
+        hero3.style.animation = "slideLeftNew .5s ease forwards"
+        selectBtn[0].style.backgroundColor = "#ffffffb2"
+        selectBtn[1].style.backgroundColor = "#ffffffb2"
+        selectBtn[2].style.backgroundColor = "#fff"
+    }
+
+
+</script>

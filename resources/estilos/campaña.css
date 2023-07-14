@@ -1,0 +1,330 @@
+body{
+    height: initial !important;
+    margin: 0;
+  }
+  
+  .adn {
+      display: flex;
+      flex-direction: column;
+      height: initial;
+    }
+    
+    .adnbann {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      color: var(--main-bg-color);
+      background: #f6f6f6;
+      border-bottom: 10px solid var(--main-bg-color);
+    }
+    
+    .adnbann h2 {
+      font-weight: 100;
+      font-style: oblique;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+    }
+    .adnbann h3 {
+      font-family: "GalanBold", sans-serif;
+      font-size: clamp(1rem, 6vw, 1.6rem);
+      font-style: oblique;
+    }
+    .adnbann img {
+      width: 50px;
+    }
+    
+    .adnbann span {
+      content: "";
+      width: 0;
+      height: 40px;
+      border-right: 1px solid;
+    }
+    
+    .acciones {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: flex-start;
+      position: relative;
+    }
+    .decal{
+      height: initial;
+    }
+    
+    #cuadro {
+      content: "";
+      width: 70%;
+      height: 50px;
+      background: var(--main-bg-color-1);
+    }
+    
+    .acciones h3 {
+      color: var(--main-bg-color);
+      font-family: "GalanBold";
+      font-size: 1.6rem;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height: 80px;
+      background: var(--main-bg-color-1);
+      border-radius: 0 5px 80px 20px;
+    }
+    
+    .acciones h2 {
+      display: flex;
+      width: 80%;
+      position: absolute;
+      background-image: url("../imagenes/fondoac.webp");
+      z-index: 4;
+      height: 120px;
+      color: #fff;
+      font-family: "GalanBold", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      top: -40px;
+      background-size: 100% 100%;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    
+    .tabla1 {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-auto-rows: minmax(400px, auto);
+      color: #00000a90;
+      width: 85%;
+      gap: 50px;
+      min-height: 20vh;
+      align-items: flex-start;
+    }
+  
+    .tabla1 article{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 7px;
+      transform: skewX(3deg);
+      overflow: hidden;
+      opacity: 0;
+      height: 90%;
+      transition: all .3s ease-in;
+    }
+
+    #t1{
+      scale: 105%;
+      box-shadow: 0 0 6px #00000a50;
+    }
+
+    #t1 .imgfondo::after{
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .potimp{
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0 0 0 ;
+    }
+  
+    .tabla1 article:hover{
+      scale: 105%;
+      box-shadow: 0 0 6px #00000a50;
+    }
+    
+  
+    .tabla1 article img{
+      width: 60px;
+      padding: 10px;
+    }
+  
+    @keyframes move {
+      0%{
+        transform: translate(0);
+      }
+      50%{
+        transform: translate(10px, 10px);
+      }
+      100%{
+        transform: translate(0);
+      }
+    }
+  
+  
+    .tabla1 article h3{
+      font-size: clamp(20px, 8vw, 30px);
+      color: var(--main-bg-color);
+      font-family: 'GalanItalic', sans-serif;
+      font-weight: 800;
+      margin: 20px 0 0 0 ;
+  
+    }
+    
+    .tabla1 article p{
+      padding: 15px;
+      color: #00000a90;
+      background: transparent;
+      margin: 0;
+      text-align: justify;
+      display: flex;
+      font-family: 'GalanLight', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      margin: auto  ;
+    }
+  
+    
+    .r1 {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 15px;
+      color: #00000a90;
+    }
+    
+    .r1 span {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #00000abd;
+    }
+    #enc {
+      background: var(--main-bg-color-1);
+    }
+    
+    .puntos {
+      color: #00000abd;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      width: 85%;
+      margin: auto;
+      gap: 20px;
+    }
+  
+    .puntos p{ 
+      color: #00000a90;
+      padding: 20px;
+      text-align: justify;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 20px;
+      position: relative;
+      flex-direction: column;
+      gap: 20px;
+      font-family: 'GalanLight',sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .puntos img{
+      width: 100%;
+      border-radius: 5px;
+    }
+    
+    .deca{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    
+    .deca h2{
+      display:flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+      background-size: 100% 100%;
+      height: 70px;
+      font-family: "GalanBold", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      color: var(--main-bg-color);
+      margin: 0;
+      line-height: 1.2;
+    }
+    
+    .deca h3{
+      margin: 0;
+      display: flex;
+      width: 50%;
+      color: var(--main-bg-color);
+      font-family: "GalanItalic"; 
+      font-size: 1.6rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  
+    .menu{
+      position: fixed;
+      z-index: 9999;
+    }
+  
+    .imgfondo{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  
+    .imgfondo{
+      border-right: 0 !important;
+    }
+  
+    .tabla1 .imgfondo::after{
+      content: '';
+      width: 100%;
+      height: 80%;
+      position: absolute;
+      background: linear-gradient( 90deg,var(--main-bg-color-1), #ffa600);  
+      width: 20%;
+      border-radius:100px;
+      transition: all .4s ease-in;
+    }
+  
+    .imgfondo img{
+      position: relative;
+      z-index: 10;
+    }
+    .tabla1 article:hover .imgfondo::after{
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+    }
+  
+    @media (max-width:720px){
+      .tabla1{
+        display: flex;
+        flex-direction: column;
+      }
+      .tabla1 article{
+        width: 80%;
+      }
+      .puntos{
+        display: flex;
+        flex-direction: column;
+      }
+      .adnbann{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+      }
+  
+      .adnbann span{
+        display: none;
+  
+      }
+  
+      .adnbann h3{
+        grid-column: 1/3;
+        text-align: center;
+        grid-row: 1;
+        margin: 0;
+        margin-top: 10px;
+      }
+    }

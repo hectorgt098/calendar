@@ -1,0 +1,96 @@
+<head>
+  <link rel="stylesheet" href="../resources/estilos/animaciones.css">
+</head>
+
+<menu class="menu">
+    <img id="logoMed" src="../imagenes/svg/log.png" alt="">
+    <div class="enlaces">
+        <a href="../index.php">
+            Inicio
+        </a>
+        <a href="../pages/campaña.php">
+            Campaña
+        </a>
+        <a href="#">
+            Team Corredor
+        </a>
+        <a href="../pages/eventos.php">
+            Eventos
+        </a>
+        <a href="../pages/galeria.php">
+            Galeria
+        </a>
+        <a href="../pages/mapint.php">Mapa Interactivo</a>
+    </div>
+    <div class="menu-img">
+        <img src="../imagenes/albert4.webp" alt="">
+    </div>
+</menu>
+<nav class="menulat">
+    <img id="menevent" src="../imagenes/iconos/menu.svg" alt="">
+    <div class="nav-redes">
+        <a href="https://www.instagram.com/albertcorredor/" target="_blank">
+            <img src="../imagenes/instagram.webp" alt="">
+        </a>
+        <a href="https://www.tiktok.com/@albertcorredor_" target="_blank">
+            <img src="../imagenes/tiktok.webp" alt="">
+        </a>
+        <a href="https://www.facebook.com/albertyordanocorredor" target="_blank">
+            <img src="../imagenes/facebook.webp" alt="">
+        </a>
+        <a href="https://twitter.com/AlbertCorredor" target="_blank">
+            <img src="../imagenes/twitter.webp" alt="">
+        </a>
+        <a href="https://www.youtube.com/@albertcorredor" target="_blank">
+            <img src="../imagenes/youtube.webp" alt="">
+        </a>
+    </div>
+</nav>
+
+
+<script src="../resources/scripts/intercep.js"></script>
+<script>
+    let menevent = document.getElementById("menevent");
+let menu = document.querySelector(".menu");
+let cont = 0; 
+menevent.onclick = menuOpen;
+menu.style.display = "none";
+
+function menuOpen() {
+  let ancho = screen.width;
+
+  if (menu.style.display === "none") {
+    if(ancho <= 720){
+      menu.style.animation = "";
+      menu.style.display = "flex";
+      menu.style.animation = "entradacel 1s ease forwards";
+      menevent.src = "../imagenes/iconos/menucierre.svg";
+      menevent.style.animation = "rotate 1s ease";
+    }else{
+      menu.style.animation = "";
+      menu.style.display = "flex";
+      menu.style.animation = "entrada 1s ease forwards";
+      menevent.src = "../imagenes/iconos/menucierre.svg";
+      menevent.style.animation = "rotate 1s ease";
+    }
+  } else {
+    if(ancho <= 720){
+    menu.style.animation = "";
+    menu.style.animation = "salidacel 1s ease forwards";
+    menevent.style.animation = "rotate 1s ease";
+    menevent.src = "../imagenes/iconos/menu.svg";
+    setTimeout(() => {
+      menu.style.display = "none";
+    }, 1000);
+    }else{
+      menu.style.animation = "";
+      menu.style.animation = "salidamenu 1s ease forwards";
+      menevent.style.animation = "rotate 1s ease";
+      menevent.src = "../imagenes/iconos/menu.svg";
+      setTimeout(() => {
+        menu.style.display = "none";
+      }, 1000);
+    }
+  }
+}
+</script>

@@ -1,0 +1,752 @@
+html{
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-bg-color: #542583;
+  --main-bg-color-1: rgb(255, 225, 0);
+}
+
+.gallery {
+  margin-top: 50px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 50px 0;
+  gap: 10px;
+  align-items: center;
+
+}
+.imagenesGal{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+  align-items: end;
+  align-content: center;
+  width: 85%;
+}
+
+.imagenesGal span{
+  width: 100%;
+  height: 250px;
+  background-size: cover !important;
+  border-radius: 3px;
+  background-position: 65% 10% !important;
+}
+
+.gallery h1{
+  color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  font-style: italic;
+}
+
+.containgalery{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  width: 28vw;
+  margin-top: 20px;
+}
+
+.galerym{
+display:grid;
+grid-template-columns: repeat(2,1fr);
+gap: 5px;
+width: 100%;
+}
+
+.modalGalery{
+  display: flex;
+  width: 100%;
+  background: #00000a80;
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+@keyframes galerym {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-83%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+.galerym img{
+  width: 100% !important;
+  height: 100%;
+}
+
+.selectores {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: 905px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 2px;
+  overflow-x: hidden;
+  min-height: 500px;
+  align-items: center;
+}
+
+.selectores button {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(150deg, var(--main-bg-color), #00000a80),
+    url("../imagenes/Capa_1-2-6.webp");
+  background-size: cover;
+  background-position: center;
+  border: none;
+  color: #fff;
+  font-size: clamp(18px, 5vh, 22px);
+  box-shadow: 0 0 10px #ffffff50;
+}
+
+.select {
+  display: flex;
+  transition: all 0.5s ease;
+  gap: 10px;
+}
+
+.select button {
+  transition: all 0.5s ease;
+}
+
+.carrusel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.desp {
+  height: 300px;
+  width: 50px;
+  border: none;
+  background: var(--main-bg-color);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 0 7px #00000a60;
+  cursor: pointer;
+}
+
+.arrow {
+  display: none;
+  position: fixed;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.galeriasec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#00000a80, #00000a90),
+    url("../imagenes/Fotos/img1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  color: #fff;
+}
+
+.galmap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
+  min-height: 600px;
+  padding-top: 30px;
+}
+
+.txtmapa{
+  color: var(--main-bg-color);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+.txtmapa h1{
+  background: var(--main-bg-color);
+  transform: skewX(-10deg);
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+  width: 90%;
+  font-family: 'GalanBold', sans-serif;
+  font-weight: 200;
+  line-height: 1.2;
+  padding: 5px 10px;
+  font-size: 30px;
+  box-shadow: -1px -1px 6px #00000a30;
+}
+.txtmapa img{
+  width: 35px;
+}
+
+.txtmapa h1 strong{
+  color: var(--main-bg-color-1);
+  font-size: 28px;
+}
+
+.centrarmapa{
+  position: relative;
+  width: 60%;
+  scale: 75%;
+}
+.centrarmapa img{
+  position: relative;
+  z-index: -999;
+}
+
+.centrarmapa span {
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centrarmapa span::after{
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: var(--main-bg-color);
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-bg-color-1);
+  font-family: 'GalanBold', sans-serif;
+}
+
+.centrarmapa span::before{
+  position: absolute;
+  color: var(--main-bg-color);
+  font-size: 14px;
+  max-width: 100px;
+  text-align: center;
+  font-size: 800;
+  font-family: 'Galano', sans-serif;
+}
+
+
+#ant::after{
+  content: '80';
+  left: 90px;
+}
+#ant::before{
+  content: 'San Antonio de Prado';
+  bottom: 120px;
+  left: 60px; 
+}
+
+#seb::before{
+  content: 'San Sebastian de Palmitas';
+  left: 25px;
+  bottom: 160px;
+  max-width: 140px;
+  font-size: 13px;
+}
+
+#seb::after{
+  content: '50';
+  left: 80px;
+  top: 120px;
+}
+
+#cris::before{
+  content: 'San Cristobal';
+  bottom: 80px;
+  left: 70px;
+}
+
+#cris::after{
+  content: '60';
+  left: 100px;
+}
+
+#alt::before{
+  content: "Altavista";
+  transform: translateY(30px) translateX(-15px);
+}
+
+#alt::after{
+  content: '70';
+  left: 80px;
+}
+
+#oct::before{
+  content: 'Doce de Octubre';
+  transform: translateY(0px) translateX(-5px);
+  max-width: 300px;
+  font-size: 10px;
+  z-index: 90000;
+}
+
+#oct::after{
+  content: '6';
+  left: 25px;
+  top:7px;
+  width: 20px;
+  height: 20px;
+
+}
+
+#cas::before{
+  content: 'Castilla';
+  rotate: -60deg;
+  transform: translateX(2px) translateY(-9px);
+}
+
+#cas::after{
+  content: '5';
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+#rob::before{
+  content: 'Robledo';
+transform: translateY(-15px) translateX(5px);
+}
+
+#rob::after{
+  content: '7';
+  top: 25px;
+  left: 30px;
+  width: 25px;
+  height: 25px;
+}
+
+#jav::after{
+  content: '13';
+  left: 15px;
+  top: 50px;
+}
+
+#ame::after{
+  content: '12';
+  bottom: 14px;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+}
+
+#lau::before{
+  content: 'Laureles';
+  transform: translateY(30px);
+}
+
+#lau::after{
+  content: '11';
+  right:30px;
+}
+
+#bel::before{
+  content: 'Belén';
+  transform: translateY(8px) translateX(-8px);
+}
+
+#bel::after{
+  content: '16';
+  right: 55px;
+  top: 20px;
+}
+#gua::after{
+  content: '15';
+  right: 10px;
+}
+
+#cruz::after{
+  content: '2';
+  width: 30px;
+  height: 30px;
+  left: 18px;
+}
+
+#pop::after{
+  content: '1';
+  width: 25px;
+  height: 25px;
+}
+
+#ara::before{
+  content: 'Aranjuez';
+  transform: translateY(18px);
+  font-size: 13px;
+}
+
+#ara::after{
+  content: '4';
+  transform: translatey(-15px);
+}
+
+#man::after{
+  content: '3';
+  bottom: 15px;
+  right: 4px;
+  width: 30px;
+  height: 30px;
+}
+
+#can::after{
+  content: '10';
+  bottom: 50px;
+  right: 30px;
+}
+
+
+#vil::after{
+  content: '8';
+  left: 25px;
+  top: 20px;
+}
+
+#bue::after{
+  content: '9';
+  top: 7px;
+  left: 20px;
+}
+
+#pob::before{
+  content: 'El Poblado';
+  transform: translateY(25px) translateX(-5px);
+}
+
+#pob::after{
+  content: '14';
+}
+
+#ele::before{
+  content: 'Santa Elena';
+  transform: translateY(30px) translateX(20px);
+}
+
+#ele::after{
+  content: '90';
+  right: 100px;
+}
+
+.centrarmapa span:hover::after{
+  box-shadow: 0 0 20px 10px #b472ff;
+}
+
+
+#seb {
+  left: 0;
+}
+
+#cris {
+  left: 112px;
+  top: 130px;
+}
+
+#ant {
+  top: 292px;
+  left: 22px;
+}
+
+#alt {
+  top: 350px;
+  left: 165px;
+}
+
+#rob {
+  left: 291px;
+  top: 243px;
+}
+
+#oct {
+  top: 197px;
+  left: 404px;
+}
+
+#cas {
+  top: 192px;
+  left: 430px;
+}
+#jav {
+  left: 258px;
+  top: 302px;
+}
+#ame {
+  top: 318px;
+  left: 308px;
+}
+
+#lau {
+  left: 304px;
+  top: 317px;
+}
+
+
+#bel {
+  top: 425px;
+  left: 307px;
+}
+
+#gua {
+  top: 439px;
+  left: 372px;
+}
+
+#rio {
+  top: 194px;
+  left: 408px;
+  z-index: 1;
+}
+
+#cruz {
+  top: 204px;
+  left: 480px;
+}
+
+#pop {
+  top: 222px;
+  left: 516px;
+}
+
+#ara {
+  top: 260px;
+  left: 456px;
+}
+
+#can {
+  top: 340px;
+  left: 428px;
+}
+
+#man{
+  top: 275px;
+  left: 518px;
+}
+
+
+#vil{
+  top: 345px;
+  left: 486px;
+}
+
+#bue{
+  left: 470px;
+  top: 404px;
+}
+
+.galeriasec h1 {
+  font-size: clamp(20px, 10vw, 60px);
+  text-shadow: 0 0 6px #f7e36fa2;
+}
+
+#pob{
+  top: 445px;
+  left: 418px;
+}
+
+#ele{
+  top: 228px;
+  left: 480px;
+}
+
+#sebs{
+  z-index: 20;
+  position: relative;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.category h2 {
+  align-self: flex-start;
+  font-size: clamp(20px, 8vw, 45px);
+  color: var(--main-bg-color);
+}
+
+.cat {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.cat article {
+  background: var(--main-bg-color-1);
+  padding: 10px;
+  text-align: center;
+  font-size: clamp(15px, 7vw, 20px);
+  cursor: pointer;
+  position: relative;
+  border-radius: 2px;
+  color: var(--main-bg-color);
+  font-weight: 700;
+  box-shadow: 0 0 6px #00000a90;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat article:hover {
+  background: var(--main-bg-color);
+  color: var(--main-bg-color-1);
+}
+
+.cat article:hover::before {
+  background: var(--main-bg-color-1);
+}
+
+.cat article::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: -5px;
+  background: var(--main-bg-color);
+  z-index: -1;
+  border-radius: 3px;
+  box-shadow: 0 0 6px #00000a90;
+  transition: all 0.4s ease;
+}
+
+
+
+@media (max-width: 1150px) {
+  .cat {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .cat {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cat {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .cat {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+.modal{
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 300px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all .5s ease;
+  z-index: 999;
+  animation: modal .6s ease;
+}
+
+.modal h5{
+  font-size: 20px;
+  margin:  10px 0;
+  font-family: 'GalanItalic';
+  font-weight: 600;
+  color: var(--main-bg-color);
+}
+
+@keyframes modal {
+  0%{
+    opacity: 0;
+    transform: translateX(100px) scale(10%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(-250px) scale(100%);
+  }
+}
+
+.centrarmapa span:hover .modal{
+  transform: translateX(-250px);
+  opacity: 1;
+  display: flex;
+}
+
+.again{
+  background: var(--main-bg-color);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  transition: all .4s ease;
+}
+.again:hover{
+  background: linear-gradient(45deg ,var(--main-bg-color), #0000cb80);
+}
+.imagenesGal img{
+  width: 100%;
+}

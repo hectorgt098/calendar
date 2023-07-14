@@ -1,0 +1,133 @@
+<style>
+    .popupCar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: scroll;
+        position: fixed;
+        inset: 0;
+        background: #00000a80;
+        backdrop-filter: blur(10px);
+        display: none;
+        z-index: 99999;
+    }
+    .imagenPoPa{
+        content: '';
+        width: 60%;
+    }
+    .galeria {
+    min-height: 70vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    }
+    .corte {
+    display: flex;
+    width: 45vw;
+    overflow: hidden;
+    }
+    #carrusel {
+    display: flex;
+    height: max-content;
+    padding: 10px 0;
+    gap: 10px;
+    margin: 0;
+    align-items: center;
+    animation: carrusel 30s linear infinite;
+    }
+    #carrusel span {
+    content: "";
+    width: 300px;
+    height: 250px;
+    border-radius: 7px;
+    background-position: center;
+    background-size: 200%;
+}
+
+.txtGaleria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 44%;
+}
+
+.txtGaleria article {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.txtGaleria strong {
+    color: var(--main-bg-color);
+}
+.txtGaleria h2 {
+    color: var(--main-bg-color);
+    font-family: 'GalanBold', sans-serif;
+    font-size: clamp(1.2rem, 8vw, 2.4rem);
+    font-weight: 100;
+    position: relative;
+    margin: 0;
+    line-height: 1.2;
+}
+.txtGaleria p {
+    font-size: 1rem;
+    color: #00000abf;
+}
+.txtGaleria a {
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.galeriaContent{
+    display: flex;
+    width: 85%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@keyframes carrusel {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>
+<div class="popupCar">
+    <span style="    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-family: 'GalanBold',sans-serif;
+    font-size: 30px;
+    cursor: pointer;">X</span>
+</div>
+<section class="galeria">
+    <div class="galeriaContent">
+    <div class="corte">
+        <div id="carrusel"></div>
+    </div>
+    <div class="txtGaleria">
+        <article>
+            <strong>Albert Corredor</strong>
+            <h2>¡Accede a la galeria!</h2>
+            <p>Observa nuestro contenido actualizado a diario</p>
+            <a href="../pages/galeria.php">
+                <button id="more-btn" style="padding: 10px 50px;">
+                    <span style="z-index: 2;">
+                        Galeria
+                    </span>
+                </button>
+            </a>
+        </article>
+    </div>
+</div>
+</section>
+
+<script src="../resources/scripts/caruselgal.js"></script>

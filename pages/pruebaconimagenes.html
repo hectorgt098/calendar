@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datatablesmin.css">
+    <link rel="stylesheet" href="fullCalendar/main.css">
+    <link rel="stylesheet" href="estilos/style.css">
+
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="js/unpkg.com_@popperjs_core@2.11.8_dist_umd_popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/datatablesmin.js"></script>
+    <script src="js/momentjs.com_downloads_moment-with-locales.js"></script>
+    <script src="fullCalendar/main.js"></script>
+</head>
+<body>
+    <form id="eventoForm" enctype="multipart/form-data">
+        <input type="text" id="titulo" placeholder="titulo">
+        <input type="file" accept="image/png, image/jpg, image/webp" id="imagen">
+        <button type="button" id="agregar" class="btn btn-primary">Agregar</button>
+    </form>
+
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("#agregar").click(function () {
+            var registro = {
+                titulo: $("#titulo").val(),
+            };
+    
+            var formData = new FormData();
+            formData.append("titulo", registro.titulo);
+            formData.append("imagen", $("#imagen")[0].files[0]);
+    
+            agregarRegistro(formData);
+        });
+    
+        function agregarRegistro(registro) {
+            $.ajax({
+                type: "POST",
+                url: "agregarimagenes.php?accion=agregar",
+                data: registro,
+                processData: false,
+                contentType: false,
+                success: function (msg) {
+                    calendario1.refetchEvents();
+                },
+                error: function (error) {
+                    alert("Hubo un error al agregar el evento: " + error);
+                },
+            });
+        }
+    });
+    </script>
+    
+</html>

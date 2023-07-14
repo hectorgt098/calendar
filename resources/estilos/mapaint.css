@@ -1,0 +1,363 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapint{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(-35deg, var(--main-bg-color)59%, var(--main-bg-color), #ffffff 63%);
+    padding: 30px 10px 0 0;
+    opacity: 0;
+    animation: mapa .7s ease forwards;
+    animation-delay: .3s;
+}
+
+.mapint h1{
+    position: absolute;
+    color: var(--main-bg-color);
+    background: var(--main-bg-color-1);
+    left: 0;
+    top: 6%;
+    border-radius: 0 50px 50px 0;
+    font-size: 3vw;
+    width: 58%;
+    text-align: center;
+    font-family: 'GalanLight';
+    padding: 0.3% 0;
+}
+
+.mapint article{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 14%;
+    top: 24%;
+}
+.mapint article p{
+    margin: 0;
+    color: var(--main-bg-color);
+    font-size: 4vw;
+    line-height: 1;
+}
+
+.mapint article strong{
+    font-family: 'GalanBold', sans-serif;
+    color: var(--main-bg-color-1);
+    line-height: 1;
+    font-size: 3vw;
+    font-style: italic;
+}
+
+@keyframes mapa {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.mapint::before{
+    content: '';
+    width: 101%;
+    height: 101%;
+    position: absolute;
+    z-index: -1;
+    filter: blur(5px);
+    border-radius: 10px;
+}
+
+.mapint img{
+    width: 100%;    
+}
+
+#carro{
+    width: 4%;
+    left: 53%;
+    position: absolute;
+    top: 21%;
+    transition: all 1s ease;
+    animation: carro 5s ease-in-out forwards;
+    background: transparent;
+    z-index: 4;
+}
+
+#edi1{
+    width: 20%;
+    position: absolute;
+    top: 6%;
+    left: 57.3%;
+    background: transparent;
+    opacity: 0;
+    animation: edificios .5s ease forwards;
+    animation-delay: 1.2s;
+}
+#edi2{
+    position: absolute;
+    background: transparent;
+    width: 16%;
+    right: 1%;
+    top: 5%;
+    opacity: 0;
+    animation: edificios .5s ease forwards;
+    animation-delay: 1.3s;
+}
+
+#cel1{
+    position: absolute;
+    width: 6%;
+    right: 8%;
+    top: 9%;
+    opacity: 0;
+    animation: celulares .6s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#lap1{
+    position: absolute;
+    width: 10.6%;
+    right: 11%;
+    top:30%;
+    opacity: 0;
+    animation: celulares .6s ease forwards;
+    animation-delay: 1.6s;
+}
+
+#edi3{
+    position: absolute;
+    width: 17%;
+    right: 21.8%;
+    bottom: 32.5%;
+    opacity: 0;
+    animation: edificios .5s ease forwards;
+    animation-delay: 1.4s;
+    z-index: 5;
+}
+
+#edi4{
+    position: absolute;
+    width: 23%;
+    top: 27%;
+    left: 42.8%;
+    opacity: 0;
+    animation: edificios .5s ease forwards;
+    animation-delay: 1.5s;
+    z-index: 2;
+}
+
+#edi5{
+    position: absolute;
+    width: 13%;
+    right: 0.7%;
+    bottom: 28%;
+    animation: edificios .5s ease forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+}
+
+#lap2{
+    position: absolute;
+    width: 12%;
+    right: 11%;
+    bottom: 24%;
+    animation: celulares .6s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+#edi6{
+    position: absolute;
+    width: 20%;
+    bottom: 16%;
+    left: 39.5%;
+    opacity: 0;
+    animation: edificios .5s ease forwards;
+    animation-delay:1.7s ;
+}
+
+#carros{
+    position: absolute;
+    width: 12%;
+    bottom: 18%;
+    right: 35%;
+    opacity: 0;
+    animation: carros 1s ease forwards;
+    animation-delay: 1.7s;
+}
+
+#tablet {
+    position: absolute;
+    width: 31%;
+    left: 22%;
+    bottom: 19.5%;
+    opacity: 0;
+    animation: tablet .6s ease forwards;
+    animation-delay: 1.8s;
+}
+
+#edificio{
+    position: absolute;
+    width: 12%;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    animation: tablet .6s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes tablet {
+    0% {
+        opacity: 0;
+        transform: translate(-20%, 20%) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+
+@keyframes carros {
+    0%{
+        opacity: 0;
+        transform: translate(100%, 50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes celulares {
+    0%{
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes edificios {
+    0%{
+        opacity: 0  ;
+        transform: scaleY(50%) translateY(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: scaleY(100%) translateY(0);
+    }
+}
+
+@keyframes carro {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    100%{
+        transform: translateX(750%) translateY(310%);
+    }
+}
+
+.mapint span{
+    background: var(--main-bg-color-1);
+    color: #631587;
+    padding: 0.1%;
+    border-radius: 100px;
+    position: absolute;
+    width: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    font-family: 'GalanBold', sans-serif ;
+    transition: all .3s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: prop .5s ease forwards;
+    animation-delay: 1.2s;
+}
+
+
+
+@keyframes prop {
+    0%{
+        opacity: 0;
+        transform: translateY(-300%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mapint span:hover{
+    scale: 110%;
+}
+
+#gum{
+    bottom: 7.6%;
+    left: 20.5%;
+    rotate: -33.5deg;
+}
+
+#msh{
+    bottom: 23%;
+    left: 34%;
+    rotate: -33.5deg;
+    z-index: 0;
+}
+
+#mst{
+    bottom: 38.8%;
+    left: 48%;
+    rotate: -33.5deg;
+}
+
+#mdc{
+    top: 32.5%;
+    right: 16.7%;
+    rotate: -33.5deg;
+}
+
+#kne{
+    right: 30%;
+    bottom: 33%;
+    rotate: 27deg;
+    width: 14%;
+}
+
+#meuc{
+    bottom: 7%;
+    width: 14%;
+    rotate: -33.5deg;
+    left: 47.7%;
+}
+
+#wtm{
+    bottom: 21.3%;
+    right: 26%;
+    rotate: -33.5deg;
+}
+
+#cn{
+    top: 32.5%;
+    right: 32%;
+    rotate: 27deg;
+    z-index: 3;
+}
+
+#E50{
+    top: 47.4%;
+    right: 14.9%;
+    rotate: 27deg;
+    z-index:3;
+}

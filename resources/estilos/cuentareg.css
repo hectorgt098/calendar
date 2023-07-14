@@ -1,0 +1,212 @@
+.manto{
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: #f5f5f500;
+    z-index: 9999;
+    animation: entrada .8s ease-in;
+    flex-direction: column;
+    backdrop-filter: blur(4px);
+    top: 0;
+}
+
+@keyframes entrada {
+    0%{
+      clip-path: circle(0.0% at 0 50%);
+    }
+
+    100%{
+      clip-path: circle(141.0% at 0 0);
+    }
+}
+
+@keyframes salidamenu{
+  0%{
+    clip-path: circle(141.0% at 0 0);
+  }
+  100%{
+    clip-path: circle(0.0% at 0 50%);
+  }
+}
+
+.contador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bg-color);
+    padding: 20px;
+    color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px #00000a50;
+    width: 500px;
+    min-height: 230px;
+    height: initial;
+    position: relative;
+  }
+
+
+  .title {
+    font-size: clamp(1rem, 8vh, 2.4rem);
+    margin: 0;
+    color: #f5f5f5;
+    text-transform: uppercase;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #f5f5f5;
+    font-family: sans-serif;
+    border-radius: 10px;
+  }
+
+  .target {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .digit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(22px, 7vw, 36px);
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+    background: var(--main-bg-color-1);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--main-bg-color);  
+    font-weight: 900;
+  }
+
+  .separator {
+    font-size: 60px;
+    margin: 0 10px;
+    color: var(--main-bg-color-1);
+  }
+
+  .contar {
+    background: var(--main-bg-color-1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .contador img{
+    width: 260px;
+    margin-top: 35px;
+  }
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (max-width:650px){
+    .contador{
+        width: 90vw;
+    }
+    .digit{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+    }
+}
+
+@media (max-width:600px){
+
+}
+
+@media (max-width:500px){
+  .countdown{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .contador{
+    width: 90vw;
+  }
+
+  .separator{
+    display: none;
+  }
+}
+
+@media (max-width:400px){
+    .contador{
+        width: 80vw;
+    }
+  .countdown{
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .contador img{
+    width: 100%;
+  }
+}
+  
+  .contador label{
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+#cierre{
+    color: #f5f5f5;
+    background: var(--main-bg-color);
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    font-size: 2rem;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#cierre:hover{
+    background: var(--main-bg-color);
+    color: var(--main-bg-color-1);
+}
+
+.manto button{
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    background: var(--main-bg-color-1);
+    color: var(--main-bg-color);
+    margin: -20px;
+    border-radius: 9px;
+    border: 6px solid var(--main-bg-color);
+    transition: all .4s ease;
+    z-index: 100;
+}
+
+.manto button:hover{
+    background: var(--main-bg-color);
+    color: #f5f5f5;
+}
+
+@keyframes salida {
+    0%{
+        clip-path: circle(72.8% at 51% 54%);
+    }  
+    100%{
+        clip-path: circle(2.4% at 100% 0);
+    }
+}
